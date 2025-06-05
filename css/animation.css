@@ -21,3 +21,11 @@
     transform: rotateZ(360deg);
   }
 }
+@keyframes loop {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
