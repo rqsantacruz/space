@@ -1,0 +1,545 @@
+@import url(./reset.css);
+@import url(./animation.css);
+body {
+  background-color: #0e0e0e;
+  overflow-x: hidden;
+}
+header {
+  width: 100%;
+  height: 80px;
+  background-color: transparent;
+  z-index: 999;
+  backdrop-filter: blur(10px);
+  position: fixed;
+}
+header:hover {
+  border-bottom: 1px solid #000;
+}
+header > .con {
+  height: 100%;
+  width: 1600px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo img {
+  filter: invert(99%) sepia(2%) saturate(4118%) hue-rotate(257deg)
+    brightness(117%) contrast(100%);
+}
+#gnb {
+  width: fit-content;
+  height: 100%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#gnb > ul {
+  display: flex;
+  gap: 40px;
+  line-height: 80px;
+}
+#gnb > ul > li {
+  width: 150px;
+  font-weight: 500;
+}
+#gnb > ul > li > a {
+  display: block;
+  color: #fff;
+  text-align: center;
+  transition: 0.3s;
+}
+#gnb > ul > li:hover > a {
+  color: rgba(49, 107, 255, 1);
+}
+.icon {
+  height: 100%;
+  text-align: center;
+  line-height: 80px;
+  display: flex;
+  align-items: center;
+}
+.icon > a {
+  display: flex;
+  height: 44px;
+  align-items: center;
+  transition: 0.3s;
+}
+.icon > a:hover {
+  background-color: rgba(61, 244, 85, 1);
+  border-radius: 100%;
+}
+.icon > a:last-child {
+  display: none;
+}
+.icon i {
+  color: #fff;
+  margin: 0 10px;
+  font-size: 24px;
+}
+
+/* 서브메뉴 */
+.submenu {
+  text-align: center;
+  transition: 0.3s;
+  display: none;
+  padding-bottom: 20px;
+  width: 100%;
+}
+.submenu > li {
+  height: 44px;
+}
+.submenu a {
+  color: #fff;
+  font-weight: 400;
+  display: block;
+  height: 100%;
+  line-height: 44px;
+}
+/* 메인비주얼 */
+.main_visual {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+}
+.main_visual > .left {
+  width: 50%;
+  height: 100%;
+  background-color: transparent;
+  color: #fff;
+  text-align: center;
+}
+.main_visual .text_wrap {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.main_visual .text_wrap > h2 {
+  font-size: 100px;
+  line-height: 1.2;
+  font-weight: 600;
+  margin-bottom: 40px;
+}
+.main_visual .text_wrap > h2 > span {
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 0.5px #fff;
+}
+.main_visual .text_wrap > p {
+  font-size: 24px;
+  line-height: 44px;
+  font-weight: 300;
+  position: relative;
+  animation: text_up 2s ease 1s 1 forwards;
+  opacity: 0;
+}
+.main_visual > .right {
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+}
+.main_visual > .right > video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.arrow {
+  position: absolute;
+  left: 50%;
+  top: 90%;
+  transform: translateX(-50%);
+  filter: drop-shadow(0px 2px 3px #000);
+}
+.arrow > i {
+  color: #fff;
+}
+/* 두번째 섹션 */
+.sec2 {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  background-color: rgba(49, 107, 255, 1);
+}
+
+.sec2 > .left {
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+}
+.sec2 > .left > video {
+  height: 100%;
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+.sec2 > .right {
+  width: 50%;
+  text-align: center;
+}
+.sec2 > .right > .text_wrap {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.sec2 > .right > .text_wrap > h2 {
+  font-size: 100px;
+  line-height: 1.2;
+  font-weight: 600;
+  margin-bottom: 40px;
+  color: #fff;
+}
+.sec2 > .right > .text_wrap > p {
+  font-size: 24px;
+  line-height: 44px;
+  font-weight: 300;
+  color: #fff;
+  position: relative;
+  animation: text_up 2s ease 1s 1 forwards;
+  opacity: 0;
+}
+.rocket {
+  font-size: 100px;
+  position: absolute;
+  left: -140%;
+  top: 50%;
+  transform: translateY(-50%);
+  animation: rocket 5s linear 1s 1;
+}
+/* 세번째 섹션 */
+.sec3 {
+  padding: 200px 0;
+}
+.sec3 > .con {
+  width: fit-content;
+  margin: 0 auto;
+  text-align: center;
+  color: #fff;
+  width: 1600px;
+}
+.sec3 > .con > .text_wrap > h3 {
+  font-size: 48px;
+  font-weight: 500;
+  margin-bottom: 40px;
+}
+.sec3 > .con > .text_wrap > p {
+  font-size: 24px;
+  font-weight: 200;
+  margin-bottom: 100px;
+}
+.sec3 > .con > .icon_wrap {
+  display: flex;
+  margin: 0 auto;
+  width: 1600px;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.icon_card {
+  width: fit-content;
+  height: 100%;
+  transition: 0.5s;
+}
+.icon_card:hover {
+  transform: translateY(-10px);
+}
+.icon_card:hover > a > i {
+  color: rgba(61, 244, 85, 1);
+}
+.icon_card:hover > a > h4 {
+  color: rgba(61, 244, 85, 1);
+}
+.icon_card:hover > a > p {
+  color: rgba(61, 244, 85, 1);
+}
+.icon_card > a {
+  width: 100%;
+  height: 100%;
+  background-color: blueviolet;
+}
+.icon_card > a > i {
+  display: block;
+  margin-bottom: 24px;
+  transition: 0.5s;
+}
+.icon_card > a > h4 {
+  display: block;
+  padding: 14px 0;
+  border-top: 1px solid rgb(68, 68, 68);
+  font-weight: 600;
+  transition: 0.5s;
+}
+.icon_card > a > p {
+  font-size: 16px;
+  font-weight: 200;
+  transition: 0.5s;
+}
+/* 네번째 섹션 */
+
+.sec4 {
+  background-color: rgba(61, 244, 85, 0.9);
+  position: relative;
+  padding: 200px 0;
+}
+.sec4::before {
+  content: 'blue_circle';
+  font-size: 0;
+  display: block;
+  border-radius: 100%;
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background-color: rgba(49, 107, 255, 1);
+  left: -100px;
+  top: 100px;
+}
+.sec4::after {
+  content: 'circle';
+  font-size: 0;
+  display: block;
+  border-radius: 100%;
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background-color: rgb(255, 255, 255);
+  opacity: 0.4;
+  z-index: 5;
+  right: 100px;
+  bottom: 100px;
+}
+.sec4 > .con {
+  width: 1600px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+.sec4 > .con > .left {
+  z-index: 10;
+  position: relative;
+}
+.sec4 > .con > .left > .text_wrap {
+  position: sticky;
+  top: 200px;
+}
+.sec4 > .con > .left h2 {
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 92px;
+}
+.sec4 > .con > .left p {
+  font-size: 16px;
+  margin-bottom: 40px;
+  line-height: 2;
+}
+.sec4 > .con > .left a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 150px;
+  font-weight: 500;
+  padding: 8px 16px;
+  border: 1px solid #fff;
+  line-height: 2;
+  transition: 0.5s;
+}
+.sec4 > .con > .left a > i {
+  font-size: 22px;
+  transition: 0.5s;
+}
+.sec4 > .con > .left a:hover {
+  color: #000;
+  border: 1px solid #000;
+}
+.sec4 > .con > .left a:hover > i {
+  transform: rotateZ(360deg);
+  color: #000;
+}
+.sec4 > .con > .right {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 40px;
+}
+.sec4 > .con > .right > .card {
+  width: 60%;
+  height: 300px;
+  box-sizing: border-box;
+  padding: 20px;
+  border-bottom: 1px solid rgb(255, 255, 255);
+  position: relative;
+  cursor: pointer;
+  transition: 0.8s;
+}
+.sec4 > .con > .right > .card:hover {
+  width: 70%;
+  border-bottom: 3px solid rgba(49, 107, 255, 1);
+}
+.sec4 > .con > .right > .card > img {
+  position: absolute;
+  width: 300px;
+  left: 0;
+  top: 0px;
+  opacity: 0;
+  transition: 0.8s;
+}
+.sec4 > .con > .right > .card:hover > img {
+  opacity: 1;
+  left: -300px;
+}
+.sec4 > .con > .right h4 {
+  font-size: 16px;
+  line-height: 44px;
+  font-weight: 600;
+  transition: 0.8s;
+}
+.sec4 > .con > .right h3 {
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 60px;
+  margin-bottom: 20px;
+  transition: 0.8s;
+}
+.sec4 > .con > .right p {
+  font-size: 24px;
+  font-weight: 200;
+  line-height: 1.4;
+  transition: 0.8s;
+}
+.sec4 > .con > .right > .card:hover > h4 {
+  color: rgba(49, 107, 255, 1);
+}
+.sec4 > .con > .right > .card:hover > h3 {
+  color: rgba(49, 107, 255, 1);
+}
+.sec4 > .con > .right > .card:hover > p {
+  color: rgba(49, 107, 255, 1);
+}
+/* 다섯번째 섹션 */
+.sec5 {
+  width: 100%;
+  text-align: center;
+  padding: 200px 0;
+  position: relative;
+}
+.sec5 > h2 {
+  font-size: 48px;
+  font-weight: 500;
+  margin-bottom: 80px;
+}
+.sec5 > .con {
+  width: 1600px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 12;
+}
+.sec5 .con_wrap {
+  width: 100%;
+  display: flex;
+  text-align: start;
+  justify-content: space-between;
+}
+
+.sec5 .con_wrap > .con_card {
+  width: calc(25% - 20px);
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  box-sizing: border-box;
+  cursor: pointer;
+  padding: 30px;
+  backdrop-filter: blur(8px);
+  transition: 0.5s;
+}
+.sec5 .con_wrap > .con_card:hover {
+  width: calc(28% - 20px);
+}
+.sec5 .con_wrap > .con_card:hover img {
+  filter: grayscale(0) drop-shadow(3px 3px 3px rgb(86, 9, 211));
+}
+.con_card img {
+  max-width: 100%;
+  filter: grayscale(0.7);
+  margin-bottom: 40px;
+}
+.sec5 .con_wrap > .con_card > h4 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+.sec5 .con_wrap > .con_card > p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  line-height: 2;
+  height: 120px;
+}
+.sec5 .con_wrap > .con_card > a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 150px;
+  font-weight: 500;
+  padding: 8px 16px;
+  border: 1px solid #fff;
+  line-height: 2;
+  transition: 0.5s;
+}
+.sec5 .con_wrap > .con_card > a > i {
+  transition: 0.5s;
+}
+.sec5 .con_wrap > .con_card > a:hover {
+  color: rgba(61, 244, 85, 1);
+  border: 1px solid rgba(61, 244, 85, 1);
+}
+.sec5 .con_wrap > .con_card > a:hover > i {
+  transform: rotateZ(360deg);
+  color: rgba(61, 244, 85, 1);
+}
+/* 텍스트 루프 */
+.loop {
+  font-size: 100px;
+  position: absolute;
+  top: 60%;
+  transform: rotate(10deg);
+  display: flex;
+}
+.loop_wrap {
+  display: flex;
+}
+.loop h2 {
+  color: rgba(49, 107, 255, 1);
+  font-weight: 800;
+}
+.loop span {
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 2px rgba(49, 107, 255, 1);
+  font-weight: 800;
+}
+/* 푸터 */
+footer {
+  width: 100%;
+  height: 80px;
+  border-top: 1px solid #444;
+}
+footer > .con {
+  width: 1600px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+footer > .con > h2 > a {
+  filter: invert(26%) sepia(11%) saturate(20%) hue-rotate(321deg)
+    brightness(92%) contrast(93%);
+}
+footer > .con > p {
+  color: #444;
+}
+footer > .con > .icon {
+  display: flex;
+  gap: 28px;
+  font-size: 24px;
+}
+footer > .con > .icon i {
+  color: #444;
+}
